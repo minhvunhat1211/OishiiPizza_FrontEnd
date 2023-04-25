@@ -1,0 +1,11 @@
+<div class="login-page" style="background-color: #67bf4b">
+    <div class="form">
+        <form action="" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <input type="text" placeholder="Username" id="username" formControlName="email" />
+            <input type="password" placeholder="Password" id="password" formControlName="password" />
+                <input type="submit" name="name" value="Login" style="background-color: #00b241; color: white" id="login" />
+            <p class="message">Not registered? <a href="">Create an account</a></p>
+        </form>
+    </div>
+</div>

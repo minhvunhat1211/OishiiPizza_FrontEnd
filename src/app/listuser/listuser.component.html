@@ -1,0 +1,49 @@
+<div class="wrapped-all">
+  <div class="container-xl">
+    <div class="table-responsive">
+      <div class="table-wrapper">
+        <div class="table-title">
+          <div class="row">
+            <div class="col-sm-5">
+              <h2>User <b>Management</b></h2>
+            </div>
+            <div class="col-sm-7">
+              <a routerLink="/AddUser" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> <span>Add New User</span></a>
+            </div>
+          </div>
+        </div>
+        <table class="table table-striped table-hover">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Email</th>
+              <th>Address</th>
+              <th>Phone number</th>
+              <th>Role</th>
+              <th>Status</th>
+              <th>Create At</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- onclick router roi truyen id vao param -->
+            <tr *ngFor="let user of listUsers" (click) = "goToDetail(user.id)">
+              <td>{{user.id}}</td>
+              <td>{{user.email}}</td>
+              <td>{{user.address}}</td>
+              <td>{{user.phoneNumber}}</td>
+              <td>{{user.role}}</td>
+              <td>{{user.status}}</td>
+              <td>{{user.createAt | date: 'dd/MM/yyyy'}}</td>
+            </tr>
+          </tbody>
+
+        </table>
+        <div class="clearfix">
+          <ul>
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

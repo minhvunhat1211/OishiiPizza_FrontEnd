@@ -1,0 +1,118 @@
+<div class="container">
+  <div class="main-body">
+
+      <!-- Breadcrumb -->
+      <nav aria-label="breadcrumb" class="main-breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a href="javascript:void(0)">User</a></li>
+              <li class="breadcrumb-item active" aria-current="page">User Profile</li>
+          </ol>
+      </nav>
+      <!-- /Breadcrumb -->
+
+      <div class="row gutters-sm">
+          <div class="col-md-4 mb-3">
+              <div class="card">
+                  <div class="card-body">
+                      <div class="d-flex flex-column align-items-center text-center">
+                          <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle" width="150">
+                          <div class="mt-3">
+                              <p class="text-secondary mb-1">Full Stack Developer</p>
+                              <p class="text-muted font-size-sm">Bay Area, San Francisco, CA</p>
+                              <button class="btn btn-primary">Follow</button>
+                              <button class="btn btn-outline-primary">Message</button>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+          </div>
+          <div class="col-md-8">
+              <form id="formUser" [formGroup]="formEditUser" (ngSubmit)="editUser()">
+                  <div class="card mb-3">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-sm-3">
+                                  <h6 class="mb-0">Address</h6>
+                              </div>
+                              <input name="address" type="text" class="col-sm-9 text-secondary"  [(ngModel)]="userDetail.address" formControlName="address">
+                          </div>
+                          <hr>
+                          <div class="row">
+                              <div class="col-sm-3">
+                                  <h6 class="mb-0">PhoneNumber</h6>
+                              </div>
+                              <input name="firstname"  type="text" class="col-sm-9 text-secondary"  [(ngModel)]="userDetail.phoneNumber" formControlName="phoneNumber" >
+                          </div>
+                          <hr>
+                          <div class="row">
+                              <div class="col-sm-3">
+                                  <h6 class="mb-0">Email</h6>
+                              </div>
+                              <div class="col-sm-9 text-secondary">
+                                  {{userDetail.email}}
+                              </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                              <div class="col-sm-3">
+                                  <h6 class="mb-0">Status</h6>
+                              </div>
+                              <div class="col-sm-9 text-secondary">
+                                {{userDetail.status}}
+                              </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                              <div class="col-sm-3">
+                                  <h6 class="mb-0">Role</h6>
+                              </div>
+                              <div class="col-sm-9 text-secondary">
+                                {{userDetail.role}}
+                              </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                              <div class="col-sm-3">
+                                  <h6 class="mb-0">CreateAt</h6>
+                              </div>
+                              <div class="col-sm-9 text-secondary">
+                                {{userDetail.createAt}}
+                              </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                              <div class="col-sm-3">
+                                  <h6 class="mb-0">UpdateAt</h6>
+                              </div>
+                              <div class="col-sm-9 text-secondary">
+                                {{userDetail.updateAt}}
+                              </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                              <div class="col-sm-3">
+                                  <h6 class="mb-0">DeleteAt</h6>
+                              </div>
+                              <div class="col-sm-9 text-secondary">
+                                {{userDetail.deleteAt}}
+                              </div>
+                          </div>
+                          <hr>
+                          <div class="row">
+                              <div class="col-xl-6">
+                                  <input type="submit" class="btn btn-info" />
+                              </div>
+                              <div class="col-xl-6">
+                                  
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </form>
+          </div>
+      </div>
+
+  </div>
+</div>

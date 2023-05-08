@@ -25,8 +25,6 @@ export class LoginComponent {
         alert("Sai roi");
       }
       else{
-        //this.loginService.hasLogin(true);
-        // this.cookieService.set("Token", res.data.accessToken);
         localStorage.setItem('Token', res.data.accessToken);
         this.router.navigate(['/Home']);
         console.log("Token_1", res.data.accessToken);

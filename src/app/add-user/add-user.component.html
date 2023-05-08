@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-4">
+        <form [formGroup]="formAddUser" (ngSubmit)="addUSer()">
+            <div class="form-group">
+                <label  class="control-label">Email</label>
+                <input formControlName="email" type="text" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label class="control-label">Password</label>
+                <input formControlName="password" type="password" class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <label class="control-label">Address</label>
+                <input formControlName="address" class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <label class="control-label">phoneNumber</label>
+                <input formControlName="phoneNumber" class="form-control" />
+                
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+  </div>
+  
+  <div>
+    <a asp-action="Index">Back to List</a>
+  </div>
+</div>
+

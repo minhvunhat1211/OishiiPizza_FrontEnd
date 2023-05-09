@@ -46,3 +46,11 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+.welcome-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.username-container{
+  margin-right: 5px;
+}

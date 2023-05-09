@@ -23,6 +23,15 @@
                   
               </ul>
           </div>
+          <div *ngIf="username !== ''" class="welcome-container">
+            <div  class="username-container">
+                <span>Hi!   </span><span>{{username}}</span>
+            </div>
+            <div>
+                <button (click)="logOut()" class="btn btn-danger">Log out</button>
+            </div>
+            
+          </div>
       </div>
   </nav>
 </header>

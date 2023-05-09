@@ -13,7 +13,8 @@ export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<u
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    if (this.jwtService.isTokenExpired()) {
+    if (this.jwtService.isTokenExpired() || this.loginService.getRole() !== "ADMIN") {
+      alert("Ban khong phai admin");
       this.router.navigate(['']);
       return false;
     }

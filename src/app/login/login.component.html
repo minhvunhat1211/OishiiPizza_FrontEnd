@@ -1,6 +1,7 @@
 <div class="login-page" style="background-color: #67bf4b">
     <div class="form">
         <form action="" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
+            <!-- <span>{{'tittle'| translate}}</span> -->
             <div asp-validation-summary="All" class="text-danger"></div>
             <input type="text" placeholder="Username" id="username" formControlName="email" />
             <span style="color: red;" *ngIf="email && email.invalid && email.touched">Email is required</span>

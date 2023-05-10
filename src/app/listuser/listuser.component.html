@@ -8,7 +8,7 @@
               <h2>User <b>Management</b></h2>
             </div>
             <div class="col-sm-7">
-              <a routerLink="/AddUser" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> <span>Add New User</span></a>
+              <a *ngIf="this.checkAdmin === true" routerLink="/AddUser" class="btn btn-secondary"><i class="fa-solid fa-plus"></i> <span>Add New User</span></a>
             </div>
           </div>
         </div>

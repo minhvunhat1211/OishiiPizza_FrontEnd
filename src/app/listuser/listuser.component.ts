@@ -11,12 +11,12 @@ import { LoginServiceService } from '../Services/login.service';
 export class ListuserComponent {
   public listUsers: any;
   public pageCount: any;
+  public checkAdmin: any;
   constructor(private listUserSevice: ListUserService, private route: Router, private loginService: LoginServiceService) {
     
   }
   public ngOnInit(): void {
-    // console.log(typeof this.loginService.getRole());
-    // console.log("fff", this.loginService.getRole());
+    this.checkAdmin = this.loginService.checkAdmin();
     this.listUserSevice.getListUser(0,0).subscribe((res) => {
       console.log(res.data.items);
       this.listUsers = res.data.items;

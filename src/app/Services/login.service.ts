@@ -37,6 +37,15 @@ export class LoginServiceService {
     console.log(decodedToken.Role);
     return decodedToken.Role;
   }
+  public decoded(): any{
+    let token = localStorage.getItem("Token");
+    let decodedToken;
+    if(token !== null)
+    {
+      decodedToken = this.jwtHelper.decodeToken(token)
+    }
+    return decodedToken;
+  }
 
   public getRolev2(token: any): string{
     let decodedToken;
@@ -59,5 +68,13 @@ export class LoginServiceService {
       this.username = '';
     }
     return this.username;
+  }
+  public checkAdmin(): boolean{
+    let role = this.getRole();
+    if (role !== 'ADMIN') {
+      return false;
+    } else {
+      return true;  
+    }
   }
 }

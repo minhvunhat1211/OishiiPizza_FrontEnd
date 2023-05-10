@@ -4,6 +4,7 @@ import { LoginServiceService } from '../Services/login.service';
 import { CookieService } from 'ngx-cookie-service';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +15,16 @@ export class LoginComponent {
     email: new FormControl('',[Validators.required]),
     password: new FormControl('',[Validators.required])
 });
-  constructor (private formBuilDer: FormBuilder, private loginService: LoginServiceService,private cookieService: CookieService, private router: Router) {}
+  constructor (
+    private formBuilDer: FormBuilder, 
+    private loginService: LoginServiceService,
+    private cookieService: CookieService, 
+    private router: Router,
+
+    
+    ) {
+      
+    }
    ngOnInit(): void {
    
    }
@@ -25,19 +35,20 @@ export class LoginComponent {
         alert("Sai roi");
       }
       else{
-        let role = this.loginService.getRolev2(res.data.accessToken);
-        if (role !== "ADMIN") {
-          alert("Ban khong phai admin");
-          this.router.navigate(['']);
-        }
-        else
-        {
-          //console.log(role);
-          localStorage.setItem('Token', res.data.accessToken);
-          this.router.navigate(['/Home']);
-          console.log("Token_1", res.data.accessToken);
-        }
-        
+        // let role = this.loginService.getRolev2(res.data.accessToken);
+        // if (role !== "ADMIN") {
+        //   alert("Ban khong phai admin");
+        //   this.router.navigate(['']);
+        // }
+        // else
+        // {
+        //   localStorage.setItem('Token', res.data.accessToken);
+        //   this.router.navigate(['/Home']);
+        //   console.log("Token_1", res.data.accessToken);
+        // }
+        localStorage.setItem('Token', res.data.accessToken);
+        this.router.navigate(['/Home']);
+        console.log("Token_1", res.data.accessToken);
       }
       
     })

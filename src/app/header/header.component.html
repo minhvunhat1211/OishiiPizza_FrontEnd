@@ -9,28 +9,37 @@
           <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
               <ul class="navbar-nav flex-grow-1">
                        <li class="nav-item">
-                          <a routerLink="/Home" class="nav-link text-dark">Home</a>
+                          <a routerLink="/Home" class="nav-link text-dark">{{'HEADER.home'|translate}}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link text-dark">User</a>
+                          <a class="nav-link text-dark">{{'HEADER.user'|translate}}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link text-dark">Review</a>
+                          <a class="nav-link text-dark">{{'HEADER.review'|translate}}</a>
                       </li>
                       <li class="nav-item">
-                          <a class="nav-link text-dark">Product</a>
+                          <a class="nav-link text-dark">{{'HEADER.product'|translate}}</a>
                       </li>
                   
               </ul>
           </div>
           <div *ngIf="username !== ''" class="welcome-container">
             <div  class="username-container">
-                <span>Hi!   </span><span>{{username}}</span>
+                <span>{{'HEADER.welcome'|translate}}   </span><span>{{username}}</span>
             </div>
             <div>
-                <button (click)="logOut()" class="btn btn-danger">Log out</button>
+                <button (click)="logOut()" class="btn btn-danger">{{'HEADER.logout' | translate}}</button>
             </div>
-            
+          </div>
+          <div class="select-lang">
+            <mat-form-field appearance="fill">
+              <mat-label>Select lang</mat-label>
+              <mat-select class="select" (selectionChange)="setLang($event.value)">
+                  <mat-option *ngFor="let item of lang" [value]="item" >
+                    {{item}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
           </div>
       </div>
   </nav>

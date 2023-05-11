@@ -15,6 +15,12 @@ import { AddUserComponent } from './add-user/add-user.component';
 import { UserDetailComponent } from './user-detail/user-detail.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './header/header.component'; 
+// import ngx-translate and the http loader
+import {TranslateLoader, TranslateModule,TranslateService} from '@ngx-translate/core';
+import {TranslateHttpLoader} from '@ngx-translate/http-loader';
+
+
+import {MatSelectModule} from '@angular/material/select';
 export function tokenGetter() {
   return localStorage.getItem("Token");
 }
@@ -44,8 +50,19 @@ export function tokenGetter() {
     }),
     FormsModule,
     ReactiveFormsModule,
+    TranslateModule.forRoot({
+      loader: {
+          provide: TranslateLoader,
+          useFactory: HttpLoaderFactory,
+          deps: [HttpClient]
+      }
+    }),
+    MatSelectModule
   ],
   providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+export function HttpLoaderFactory(http: HttpClient){
+  return new TranslateHttpLoader(http);
+}

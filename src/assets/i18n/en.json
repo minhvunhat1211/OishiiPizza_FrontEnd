@@ -1,3 +1,32 @@
 {
-  "tittle": "Minh handsome"
+  "HEADER": {
+    "home": "Home",
+    "user": "User",
+    "review": "Review",
+    "product": "Product",
+    "welcome": "Hi",
+    "logout": "Logout"
+  },
+  "LOGIN": {
+    "username": "Username",
+    "password": "Password",
+    "login": "Login",
+    "notRegis": "Not registered?",
+    "create": "Create an account",
+    "reqEmail": "Email is required",
+    "reqPassword": "Password is required"
+  },
+  "USER": {
+    "userManagement": "User Management",
+    "addNew": "Add new user",
+    "address": "Address",
+    "phoneNum": "Phone number",
+    "role": "Role",
+    "status": "Status",
+    "createAt": "Create at",
+    "updateAt": "Update at",
+    "deleteAt": "Delete at",
+    "submit": "Submit"
+  }
+  
 }

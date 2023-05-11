@@ -1,3 +1,32 @@
 {
-  "tittle": "Minh đẹp trai"
+  "HEADER": {
+    "home": "Trang chủ",
+    "user": "Người dùng",
+    "review": "Đánh giá",
+    "product": "Sản phẩm",
+    "welcome": "Xin chào",
+    "logout": "Đăng xuất"
+  },
+  "LOGIN": {
+    "username": "Tên đăng nhập",
+    "password": "Mật khẩu",
+    "login": "Đăng nhập",
+    "notRegis": "Chưa có tài khoản?",
+    "create": "Tạo tài khoản",
+    "reqEmail": "Email không được trống",
+    "reqPassword": "Password không được trống"
+  },
+  "USER": {
+    "userManagement": "Quản lý người dùng",
+    "addNew": "Tạo mới",
+    "address": "Địa chỉ",
+    "phoneNum": "SĐT",
+    "role": "Quyền",
+    "status": "Trạng thái",
+    "createAt": "Tạo lúc",
+    "updateAt": "Sửa lúc",
+    "deleteAt": "Xóa lúc",
+    "submit": "Gửi"
+  }
+  
 }

@@ -54,3 +54,7 @@ button.accept-policy {
 .username-container{
   margin-right: 5px;
 }
+.select-lang{
+  height: 55px;
+  margin-left: 10px;
+}

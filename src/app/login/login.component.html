@@ -3,12 +3,13 @@
         <form action="" [formGroup]="formLogin" (ngSubmit)="onSubmit()">
             <!-- <span>{{'tittle'| translate}}</span> -->
             <div asp-validation-summary="All" class="text-danger"></div>
-            <input type="text" placeholder="Username" id="username" formControlName="email" />
-            <span style="color: red;" *ngIf="email && email.invalid && email.touched">Email is required</span>
-            <input type="password" placeholder="Password" id="password" formControlName="password" />
-            <span style="color: red;" *ngIf="password && password.invalid && password.touched">Password is required</span>
-            <input [disabled]="formLogin.invalid" type="submit" name="name" value="Login" style="background-color: #00b241; color: white" id="login" />
-            <p class="message">Not registered? <a href="">Create an account</a></p>
+            <input type="text" placeholder="{{'LOGIN.username' | translate}}" id="username" formControlName="email" />
+            <span style="color: red;" *ngIf="email && email.invalid && email.touched">{{'LOGIN.reqEmail' | translate}}</span>
+            <input type="password" placeholder="{{'LOGIN.password' | translate}}" id="password" formControlName="password" />
+            <span style="color: red;" *ngIf="password && password.invalid && password.touched">{{'LOGIN.reqPassword' | translate}}</span>
+            <input [disabled]="formLogin.invalid" type="submit" name="name" value="{{'LOGIN.login' | translate}}" style="background-color: #00b241; color: white" id="login" />
+            <p class="message">{{'LOGIN.notRegis' | translate}} <a href="">{{'LOGIN.create' | translate}}</a></p>
         </form>
+        
     </div>
 </div>

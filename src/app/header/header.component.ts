@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { LoginServiceService } from '../Services/login.service';
 import { Router } from '@angular/router';
+import { LangService } from '../Services/lang.service';
 
 @Component({
   selector: 'app-header',
@@ -9,7 +10,11 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent {
   public username: any;
-  constructor(private loginService: LoginServiceService, private router: Router) {
+  public lang: string[] = [
+    'vi',
+    'en',
+  ]
+  constructor(private loginService: LoginServiceService, private router: Router, private langService: LangService) {
     
   }
   public ngOnInit(): void {
@@ -19,5 +24,9 @@ export class HeaderComponent {
   }
   public logOut(): void{
     this.loginService.logout();
+  }
+  public setLang(lang: string){
+    localStorage.setItem('lang', lang);
+    this.langService.switchLang(lang);
   }
 }
